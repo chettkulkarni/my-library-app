@@ -1,22 +1,16 @@
 {
-  "name": "my-library-app",
+  "name": "my-library-app2",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "6.11.3",
-    "yarn": "1.x",
-    "npm": "6.11.3"
-  },
   "dependencies": {
-    "bootstrap": "^4.3.1",
+     "bootstrap": "^4.3.1",    
     "i": "^0.3.6",
     "react": "^16.11.0",
-    "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.11.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.2.0",
-    "react-search-field": "^1.0.0",
-    "react-select": "^3.0.8",
+    "react-scripts": "3.2.0",
+    "react-router-dom": "^5.1.2",     
+    "react-search-field": "^1.0.0",   
+    "react-select": "3.0.8",    
     "reactstrap": "^8.1.1"
   },
   "scripts": {
@@ -39,8 +33,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^2.1.1"
   }
 }
