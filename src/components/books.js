@@ -23,7 +23,9 @@ import { Link } from 'react-router-dom';
          <Card  style={{width: '20rem' }}>
           <CardBody>
             <CardTitle>{book.title}</CardTitle>
-            <CardText><p><b>Author:</b>{book.authors}</p>
+            <CardText>
+              {/* <p><b>Author:</b>{book.authors}</p> */}
+            <Link to={`/search/?title=&authors=${book.authors}&language=`} > <b>Author: </b>{book.authors}</Link>
                     <p><b>Rating:</b>{book.average_rating}</p>
                     <p><b>BookID:</b>{book.bookID}</p>
                     <p><b>Language Code:</b>{book.language_code}</p>
