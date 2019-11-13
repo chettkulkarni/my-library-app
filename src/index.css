@@ -23,7 +23,7 @@ body {
 }
 
 body {
-  padding: 1rem 0;
+  padding: 0rem 0;
   background: #f9f9fb;
 }
 
@@ -127,10 +127,3 @@ body {
   position: fixed;
   height: 100%;
 }
-
-/* .ib
-{ 
-  background: salmon;
-  border: solid red 1px;
-  display: inline-block;
-} */
