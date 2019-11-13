@@ -1,0 +1,27 @@
+import React from 'react';
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
+const SearchBar = (props) => {
+  return (
+    <Form>
+      <FormGroup>
+        <Label for="title">Book</Label>
+        <Input type="textarea" name="title" id="bookname" placeholder="search book name" />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="AuthorName">Author</Label>
+        <Input type="textarea" name="authors" id="authorname" placeholder="search author name" />
+      </FormGroup>
+
+
+      <FormGroup>
+        <Label for="AuthorName">LanguageCode</Label>
+        <Input type="textarea" name="language" id="language" placeholder="Language Code" />
+      </FormGroup>
+      <Button>Submit</Button>
+    </Form>
+  );
+}
+
+export default SearchBar;
