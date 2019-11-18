@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-import {BrowserRouter} from 'react-router-dom';
 import Books from './books';
 import SearchBar from './searchbar';
 import Navbar_home from './navbar';
@@ -33,14 +32,9 @@ class search extends Component {
 		var bookId = window.location.search
 		console.log('bookid',bookId)
 		
-		if (bookId === 'undefined' || bookId === null ||bookId === ' '){
-			console.log('in here')
-			var url2='http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books/1';
-		}
-		else{
+		
 		var url2='http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books'+bookId;
-		}
-		console.log(url2)
+		
 		
 	  let url = url2;
 	      fetch(url)

@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './components/main';
 import {BrowserRouter} from 'react-router-dom';
-import Books from './components/books';
-import Navbar_home from './components/navbar';
-import Leftbar from './components/leftbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 //App Component
 class App extends Component {

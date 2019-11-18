@@ -127,3 +127,7 @@ body {
   position: fixed;
   height: 100%;
 }
+.jumbotron{
+  height: 100%;
+  width: 100%;
+}
