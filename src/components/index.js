@@ -8,9 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SearchField from "react-search-field";
+import firebase from 'firebase';
 
 class index extends Component {
 	render() {
+		var user=firebase.auth().currentUser;
+		if (user===null){
+			user='0'
+		}
 	  return (
 		<div>
 		   <Navbar_home />
@@ -19,6 +24,7 @@ class index extends Component {
 		  <Row>
 			<Leftbar/>
 		  <Books books={this.state.books} />
+		  <h1>{user.displayName}</h1>
 		  </Row> 
 		  </div>
 			);
@@ -32,6 +38,7 @@ class index extends Component {
 	      fetch(url)
 	      .then(res => res.json())
 	      .then(data => {
+			// console.log(firebase.auth().currentUser.displayName);
 	        console.log(data)
 	        const a=[]
 	        for (var i in data){

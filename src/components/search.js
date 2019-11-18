@@ -15,8 +15,6 @@ class search extends Component {
 	  return (
 		<div>
 		   <Navbar_home />
-		   
-
 		  <Row>
 			<Leftbar/>
 			<Col>
@@ -24,7 +22,7 @@ class search extends Component {
 			<Books books={this.state.books} />
 			</Col>
 		  </Row> 
-		  </div>
+		</div>
 			);
 	}
 	state = {

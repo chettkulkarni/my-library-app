@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
                <Jumbotron>
                     <h3 className="display-3">{book.title}</h3>
                     {/* <p className="lead"> Author:{book.authors}</p> */}
-                    <Link to={`/search/?title=&authors=${book.authors}&language=`} > <b>Author: </b>{book.authors}</Link>
+                    <b>Author: </b> <Link to={`/search/?title=&authors=${book.authors}&language=`} > {book.authors}</Link>
                     <p className="lead"><b>Rating:</b>{book.average_rating}</p>
                     <p className="lead"><b>BookID:</b>{book.bookID}</p>
                     <p className="lead"><b>Language Code:</b>{book.language_code}</p>

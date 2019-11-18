@@ -1,15 +1,29 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card';
-import CardDeck from 'react-bootstrap/CardDeck';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React,{Component} from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
+import login from './login.js';
+import firebase from 'firebase';
+import {NavLink} from 'react-router-dom';
 
+export default class Navbar_home extends Component{
+  state={isLoggedIn : false}
+  componentWillMount = () =>{
+    firebase.auth().onAuthStateChanged(user=>{
+        this.setState({isLoggedIn : !!user });
+    });
+}
 
-const Navbar_home = ({ books }) => {
+  render(){
+    var action;
+        if(this.state.isLoggedIn){
+            var user=firebase.auth().currentUser;
+            action = <NavLink to="/logout">{user.displayName}, Logout</NavLink>;
+        }
+        else{
+            action = <NavLink to="/login">Login</NavLink>;
+        }
+
     return (
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Navbar.Brand href="/">LIMS- Library Management Platform</Navbar.Brand>
@@ -22,11 +36,11 @@ const Navbar_home = ({ books }) => {
         <NavDropdown.Item href="#action/3.1">Dummy</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Dummy</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Dummy</NavDropdown.Item>
+        <NavDropdown.Item href="./login">login</NavDropdown.Item>
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">Dummy</Nav.Link>
+      <Nav.Item><Nav.Link >{action}</Nav.Link></Nav.Item>
       <Nav.Link eventKey={2} href="#memes">
         Dummy
       </Nav.Link>
@@ -34,5 +48,5 @@ const Navbar_home = ({ books }) => {
     </Navbar.Collapse>
     </Navbar>
     )
-  };
-export default Navbar_home
+  }
+}
