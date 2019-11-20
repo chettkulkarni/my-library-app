@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import Books from './books';
 import SearchBar from './searchbar';
-import Navbar_home from './navbar';
+import NavbarHome from './navbar';
 import Leftbar from './leftbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
@@ -14,7 +14,7 @@ class search extends Component {
 	render() {
 	  return (
 		<div>
-		   <Navbar_home />
+		   <NavbarHome />
 		  <Row>
 			<Leftbar/>
 			<Col>

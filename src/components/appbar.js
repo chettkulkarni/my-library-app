@@ -86,7 +86,7 @@ export default function PrimarySearchAppBar() {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleSearch = event => {
-      if (event.keyCode==13){
+      if (event.keyCode===13){
     setAnchorEl(event.currentTarget);}
   };
 

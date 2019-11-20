@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase';
-import {Redirect, withRouter} from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 
 
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
