@@ -5,6 +5,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import firebase from 'firebase';
+
 
 
    const Books = ({ books }) => {
@@ -29,6 +32,7 @@ import { Link } from 'react-router-dom';
                     <p><b>Language Code:</b>{book.language_code}</p>
                     <p><b>Rating Count:</b>{book.ratings_count}</p>
                     <p><b>Text Reviews Count:</b>{book.text_reviews_count}</p>
+                    <p><b>Count:</b>{book.count}</p>
               </CardText>
             <Link to={`/bookinfo/${book.bookID}`} > Click to View More</Link>
             </CardBody>

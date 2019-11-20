@@ -7,8 +7,24 @@ import Leftbar from './leftbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
+import firebase from 'firebase';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+
+
 
 class BookInfo extends Component {
+	async displayButton(id,title2,count){
+		// return <p>abc</p>
+		console.log('i was here')
+		  
+		
+
+	}
+	  
+		;
+	
 	render() {
 	  return (
 		<div>
@@ -21,7 +37,8 @@ class BookInfo extends Component {
 			);
 	}
 	state = {
-	  books: []
+	  books: [],
+	  button:''
 	}
   
 	componentDidMount() {
@@ -38,9 +55,63 @@ class BookInfo extends Component {
 	      console.log(a)
 	      this.setState({ books: a })
 	      })
-	      .catch(console.log)
+		  .catch(console.log)
+		  
+
+
+
+
+
+// console.log('start')
+// 		  if(this.state.isLoggedIn){
+// 			var user=firebase.auth().currentUser.displayName;
+// 			user=1
+// 			var button=''
+// 			url ="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests/users/"+user;
+// 			var alreadyTaken=0
+			 
+// 			  axios.get(url)
+// 			.then(data => {
+// 			  const a=[]
+// 			  for (var i in data.data){
+// 			  if (data.data[i].Book_Id ==this.books.bookId){
+// 				alreadyTaken=1
+// 				break;
+// 			  }
+// 			  }  
+// 			  if(alreadyTaken){
+				
+// 				  // button=<p>only one book person sorry</p>
+// 				  console.log('in here')
+// 				  this.setState({button:<p>only one book person sorry</p>})
+			  
+// 			}
+			  
+// 			  if (this.state.books.count>0){
+// 				  this.setState({button:<p>Request book</p>})
+// 			  //   button=<p>Request book</p>
+		
+// 				    }
+// 				console.log('ended')
+// 			})
+// 		  }
+// 		    else{
+// 		  //       this.state.button =<Link to='/login'>Login to continue</Link>
+// 		  // if (this.setState.button!='<Link to=\'/login\'>Login to continue</Link>'){
+// 		  // this.setState( {button : '<Link to=\'/login\'>Login to continue</Link>'})
+// 		this.setState({button:'<Link to=\'/login\'>Login to continue</Link>'})
+		
+// 		  // }
+// 		    } 
+// 		// console.log('button',this.state.button)
+// 		// alert(this.state.button)
+// 	  console.log(this.state.button) 
+// 	  console.log('end')
+
+
+
 	    }
-  
+		
   
   }
   //http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books
