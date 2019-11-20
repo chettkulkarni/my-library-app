@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import { withRouter} from 'react-router-dom';
 import axios from 'axios';
 import '../css/bookinfodesc.css'
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
  class BookInfoDesc extends Component {
   //  constructor(props){
@@ -77,11 +78,11 @@ import '../css/bookinfodesc.css'
       <div>
 
 
-        
+<Jumbotron fluid>
         {this.props.books.map((book,index) => (
 
 <div>
-            <p>{book.title}</p>
+            <h1>{book.title}</h1>
              <b>Author: </b> <Link to={`/search/?title=&authors=${book.authors}&language=`} > {book.authors}</Link>
                    <p><b>Rating:</b>{book.average_rating}</p>
                    <p><b>BookID:</b>{book.bookID}</p>
@@ -96,6 +97,7 @@ import '../css/bookinfodesc.css'
                    {/* <p>{this.state.toggleState}</p>   */}
            </div>
         ))}
+        </Jumbotron>
 
 </div>
     )
