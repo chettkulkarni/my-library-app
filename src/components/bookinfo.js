@@ -18,10 +18,10 @@ class BookInfo extends Component {
 	render() {
 	  return (
 		<div>
-		   <NavbarHome />
-		  <Row>
-			<Leftbar/>
-		  <BookInfoDesc books={this.state.books} button={this.state.button} />
+		   <NavbarHome/>
+		  <Row className="row">
+			<Leftbar className='col-md-3'/>
+		  <BookInfoDesc books={this.state.books} button={this.state.button} className='col-md-9' />
 		  </Row> 
 		  </div>
 			);
@@ -58,7 +58,7 @@ class BookInfo extends Component {
 			var alreadyTaken=0
 			for (var i in data){
 				// console.log(i);
-				if (data[i].Book_Id === bookId){
+				if (data[i].Book_Id == bookId){
 				//   console.log('error')	;
 					alreadyTaken=1;
 				  break;

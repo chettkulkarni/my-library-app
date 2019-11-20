@@ -75,10 +75,10 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 
 
     return (
-      <div>
+      <div class= 'col-md-9'>
 
 
-<Jumbotron fluid>
+<div class='w-100' >
         {this.props.books.map((book,index) => (
 
 <div>
@@ -97,7 +97,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
                    {/* <p>{this.state.toggleState}</p>   */}
            </div>
         ))}
-        </Jumbotron>
+        </div>
 
 </div>
     )
