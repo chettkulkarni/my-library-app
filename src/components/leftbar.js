@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 
 const LeftBar = ({ books }) => {
     return (
-<div class="col-md-3">
+<div>
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="flex-column">
 
     <Nav className="mr-auto" style={{ minHeight : 100 + "vh" }}>

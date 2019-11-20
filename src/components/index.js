@@ -17,12 +17,15 @@ class index extends Component {
 
 
 		  <Row>
-			<Leftbar/>
+			<Leftbar />
 		  <Books books={this.state.books} />
 		  </Row> 
 		  </div>
 			);
 	}
+
+
+	
 	state = {
 	  books: []
 	}
