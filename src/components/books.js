@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import  { Component } from 'react'
+import { withRouter} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 // import axios from 'axios';
 
 
@@ -19,7 +21,7 @@ import  { Component } from 'react'
     //  console.log(this.props.books2)
     return (
        <div>
-         <center><h1>Recommendations List</h1></center>
+         <center><h1>Book List</h1></center>
         <Container>
           <Row>
          {this.props.books.map((book,index) => (
@@ -38,7 +40,8 @@ import  { Component } from 'react'
                     <p><b>Text Reviews Count:</b>{book.text_reviews_count}</p>
                     <p><b>Count:</b>{book.count}</p>
               </CardText>
-            <Link to={`/bookinfo/${book.bookID}`} > Click to View More</Link>
+            {/* <Link to={`/bookinfo/${book.bookID}`} > Click to View More</Link> */}
+            <Button variant="outlined" style={{ color: 'primary' }} href={`/bookinfo/${book.bookID}` } > Click to View More</Button>
             </CardBody>
           </Card>
           </CardDeck>
@@ -51,7 +54,7 @@ import  { Component } from 'react'
      )
    }
   };
-   export default Books
+   export default withRouter(Books)
 
 
 
