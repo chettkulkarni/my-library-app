@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Books from './books';
-import NavbarHome from './navbar';
-import Leftbar from './leftbar';
+// import NavbarHome from './navbar';
+// import Leftbar from './leftbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Row from 'react-bootstrap/Row';
-// import PrimarySearchAppBar from './appbar'
+// import Row from 'react-bootstrap/Row';
+import PrimarySearchAppBar from './appbar'
 import axios from 'axios';
 
 class index extends Component {
 	render() {
 	  return (
 		<div>
-		   <NavbarHome />
-		   {/* <PrimarySearchAppBar/> */}
+		   {/* <NavbarHome /> */}
+		   
+		   <PrimarySearchAppBar/>
 
 
-		  <Row>
-			<Leftbar />
+		  {/* <Row> */}
+			{/* <Leftbar /> */}
 		  <Books books={this.state.books} />
-		  </Row> 
+		  {/* </Row>  */}
 		  </div>
 			);
 	}

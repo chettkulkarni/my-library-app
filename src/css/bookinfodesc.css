@@ -1,12 +1,13 @@
 .chetan{
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     text-align: center;
     color: black;
-    background-color: gray;
+    background-color: white;
 }
 
 .some{
     float: right;
     width: 75%;
 }
+

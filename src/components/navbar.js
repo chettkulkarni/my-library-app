@@ -35,7 +35,7 @@ export default class Navbar_home extends Component{
         <NavDropdown.Item href="#action/3.1">Dummy</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Dummy</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="./login">login</NavDropdown.Item>
+
       </NavDropdown>
     </Nav>
     <Nav>

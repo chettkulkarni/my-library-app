@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import '../App.css';
 import Books from './books';
 import SearchBar from './searchbar';
-import NavbarHome from './navbar';
-import Leftbar from './leftbar';
+// import NavbarHome from './navbar';
+// import Leftbar from './leftbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
+import PrimarySearchAppBar from './appbar'
 
 
 class search extends Component {
 	render() {
 	  return (
 		<div>
-		   <NavbarHome />
+		   {/* <NavbarHome /> */}
+		   <PrimarySearchAppBar/>
+		   
 		  <Row>
-			<Leftbar/>
+			{/* <Leftbar/> */}
 			<Col>
 			<SearchBar/>
 			<Books books={this.state.books} />

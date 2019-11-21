@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import '../App.css';
 // import {BrowserRouter} from 'react-router-dom';
 import BookInfoDesc from './bookinfodesc';
-import NavbarHome from './navbar';
-import Leftbar from './leftbar';
+// import NavbarHome from './navbar';
+// import Leftbar from './leftbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import firebase from 'firebase';
 import { Link } from 'react-router-dom';
+import PrimarySearchAppBar from './appbar'
+// import { userInfo } from 'os';
+import axios from 'axios';
 
 
 
@@ -18,9 +21,10 @@ class BookInfo extends Component {
 	render() {
 	  return (
 		<div>
-		   <NavbarHome/>
+		   {/* <NavbarHome/> */}
+		   <PrimarySearchAppBar/>
 		  <Row className="row">
-			<Leftbar className='col-md-3'/>
+			{/* <Leftbar className='col-md-3'/> */}
 		  <BookInfoDesc books={this.state.books} button={this.state.button} className='col-md-9' />
 		  </Row> 
 		  </div>
@@ -47,22 +51,30 @@ class BookInfo extends Component {
 	    //   console.log(a)
 		  this.setState({ books: a })
 
-		
-		  var user=1
-		  url ="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests/users/"+user;
-	      fetch(url)
-	      .then(res => res.json())
-	      .then(data => {
+		//   var userInfo = {
+		// 	'Type':'issue',
+		// 	'Book_Id':bookId,
+		// 	'User_Id':'1'
+		//   };
+
+		//   var user=1
+		//   url ="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests/users/"+user;
+	    //   fetch(url)
+	    //   .then(res => res.json())
+	    //   .then(data => {
 	        // console.log("second fetch", data)
 			// console.log(data.bookId)
+			var user=1
+			var userInfo ='?Status=Approved,Issued&Book_Id='+bookId+'&User_Id='+user
+			  console.log(userInfo)
+			  var url="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests"+userInfo;
+			  axios.get(url)
+			  .then(data => {
+					console.log('data',data.data.length)
 			var alreadyTaken=0
-			for (var i in data){
-				// console.log(i);
-				if (data[i].Book_Id == bookId){
-				//   console.log('error')	;
+					if(data.data.length>0){
 					alreadyTaken=1;
-				  break;
-				}
+
 			}
 			
 
