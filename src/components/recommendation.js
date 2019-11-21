@@ -11,7 +11,7 @@ import  { Component } from 'react'
 
 
 
-   class Books  extends Component {
+   class Recommendation  extends Component {
 
 
    
@@ -19,7 +19,7 @@ import  { Component } from 'react'
     //  console.log(this.props.books2)
     return (
        <div>
-         <center><h1>Recommendations List</h1></center>
+         <center><h1>Recommended Book List</h1></center>
         <Container>
           <Row>
          {this.props.books.map((book,index) => (
@@ -51,7 +51,7 @@ import  { Component } from 'react'
      )
    }
   };
-   export default Books
+   export default Recommendation
 
 
 
