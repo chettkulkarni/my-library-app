@@ -22,8 +22,6 @@ import Paper from '@material-ui/core/Paper';
     });
 }
 
-
-
   handleClick(e,id,title2) {
     console.log('func called',id,title2,this.state.isLoggedIn)
     if (this.state.isLoggedIn ){
@@ -32,8 +30,7 @@ import Paper from '@material-ui/core/Paper';
     // var type="Type"
     // console.log(user)
     
-  
-     user=1
+    //  user=1
 			var userInfo ='?Status=Approved,Issued&Book_Id='+id+'&User_Id='+user;
 			console.log(userInfo)
 			  url="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests"+userInfo;
@@ -54,7 +51,7 @@ import Paper from '@material-ui/core/Paper';
               'Type':'issue',
               'bookID':id,
               'title': title2,
-              'userId':'1'
+              'userId':user
             };
         axios.post(`http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests`, userInfo)
         .then(res => {

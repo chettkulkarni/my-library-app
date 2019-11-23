@@ -8,8 +8,25 @@ import {NavLink} from 'react-router-dom';
 export default class Navbar_home extends Component{
   state={isLoggedIn : false}
   componentWillMount = () =>{
+
+    var database = firebase.database();
+    function writeUserData(userId, name, email, imageUrl) {
+      firebase.database().ref('users/' + userId).set({
+        username: name,
+        email: email,
+        profile_picture : imageUrl
+      });
+    }
+
+    
+
     firebase.auth().onAuthStateChanged(user=>{
         this.setState({isLoggedIn : !!user });
+
+        writeUserData(firebase.auth().currentUser.email,firebase.auth().currentUser.displayName,firebase.auth().currentUser.email,firebase.auth().currentUser.photoURL)
+        
+        
+        
     });
 }
 

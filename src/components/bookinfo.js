@@ -56,7 +56,7 @@ class BookInfo extends Component {
 	    //   console.log(a)
 		  this.setState({ books: a })
 
-			var user=1
+			var user=firebase.auth().currentUser.email;
 			var userInfo ='?Status=Approved,Issued&Book_Id='+bookId+'&User_Id='+user
 			  console.log(userInfo)
 			  var url="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests"+userInfo;

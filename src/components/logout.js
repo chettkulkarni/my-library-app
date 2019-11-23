@@ -5,6 +5,7 @@ import firebase from 'firebase';
 class Logout extends Component {
     componentWillMount = () => {
         firebase.auth().signOut();
+        localStorage.removeItem("isAdmin");
     }
 
     render(){
