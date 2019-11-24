@@ -9,9 +9,10 @@ class LeftBar  extends Component {
   render(){
     var isAdmin=localStorage.getItem("isAdmin")
     alert(isAdmin)
+    var adminlog=parseInt(isAdmin)
     var request=''
     var ret=''
-    if (isAdmin===1){
+    if (adminlog==1){
        request= <Nav.Link href="/Requests">Requests</Nav.Link>
        ret=<Nav.Link href="/Returns">Returns</Nav.Link>
     }

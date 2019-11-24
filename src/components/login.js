@@ -38,7 +38,7 @@ class Login extends Component {
             
             if(this.state.isSignedIn){
                 // currentProp.setState({isAdmin:user.isAdmin})
-                console.log('isAdmin',user.isAdmin)
+                // console.log('isAdmin',user.isAdmin)
                 
 
                 
@@ -51,7 +51,7 @@ class Login extends Component {
                 var username =snapshot.val().username;
                 var email=snapshot.val().email;
                 var isAdmin=snapshot.val().isAdmin;
-                alert('isadmin info',isAdmin)
+                // alert('isadmin info',isAdmin)
                 localStorage.setItem("isAdmin", isAdmin);
                 localStorage.setItem("uid", uid);
                 
