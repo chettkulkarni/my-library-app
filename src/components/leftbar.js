@@ -7,11 +7,13 @@ import {Component} from 'react';
 
 class LeftBar  extends Component {
   render(){
-    var isAdim=localStorage.getItem("isAdmin")
+    var isAdmin=localStorage.getItem("isAdmin")
     // alert(isAdim)
-    if (isAdim){
-      var request= <Nav.Link href="/Requests">Requests</Nav.Link>
-      var ret=<Nav.Link href="/Returns">Returns</Nav.Link>
+    var request=''
+    var ret=''
+    if (isAdmin){
+       request= <Nav.Link href="/Requests">Requests</Nav.Link>
+       ret=<Nav.Link href="/Returns">Returns</Nav.Link>
     }
     
 
