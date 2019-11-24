@@ -54,7 +54,7 @@ class Login extends Component {
                 localStorage.setItem("isAdmin", isAdmin);
                 localStorage.setItem("uid", uid);
                 
-                console.log('x',username,email,isAdmin)
+                alert('x',username,email,isAdmin)
                 
                 // ...
               });

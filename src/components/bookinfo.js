@@ -66,7 +66,7 @@ class BookInfo extends Component {
 			
 			if(this.state.isLoggedIn){
 				var alreadyTaken=0
-				var user=firebase.auth().currentUser.email;
+				var user=firebase.auth().currentUser.uid;
 				var userInfo ='?Status=Approved,Issued&Book_Id='+bookId+'&User_Id='+user
 				// console.log(userInfo)
 				var url=domain+"requests"+userInfo;
@@ -101,7 +101,7 @@ class BookInfo extends Component {
 				}
 				
 				url=domain+'books/'+bookId+'/recommendations'
-				console.log(url)
+				// console.log(url)
 					axios.get(url)
 				.then(data => {
 					// console.log(firebase.auth().currentUser.displayName);
@@ -111,7 +111,7 @@ class BookInfo extends Component {
 						// console.log('iterations',data.data[i],i)
 					a.push(data.data.result[i])
 				  }
-				  console.log('a',a)
+				//   console.log('a',a)
 				  this.setState({ recommendations: a })
 				//   console.log('books2',this.state.books2)
 				  }).catch(console.log)

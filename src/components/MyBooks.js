@@ -17,50 +17,25 @@ class MyBooks extends Component {
     isLoggedIn: false
   };
 
-  // constructor(props) {
-  //   super(props);
-  //   this.handleClick = this.handleClick.bind(this);
-  // }
-
-  loadReqs() {
-    axios
-      .get(
-        "http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests?User_Id=" +
-          "lokv007@gmail.com" +
-          "&Type=issue"
-      )
-      .then(res => {
-        console.log(res);
-        this.setState({ loading: false });
-        this.setState({ requests: res.data });
-      });
-  }
-  componentWillMount = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isLoggedIn: !!user });
-    });
-  };
-
-  componentDidMount() {
-    // var user = firebase.auth().currentUser.email;
-    this.loadReqs();
-  }
-
-  // handleClick(event) {
-  //   const a = {
-  //     Type: "issue"
-  //   };
-  //   let self = this;
-  //   var url =
-  //     "http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests?User_Id=" +
-  //     1 +
-  //     "&Type=issue";
-  //   axios.get(url).then(res => {
-  //     console.log(res);
-  //     self.setState({ loading: true });
-  //     self.loadReqs();
-  //   });
-  // }
+  componentDidMount = () => {
+		firebase.auth().onAuthStateChanged(user=>{
+      this.setState({isLoggedIn : !!user });   
+    if(this.state.isLoggedIn){
+      var user=firebase.auth().currentUser.uid
+      var url='http://lmp.nupursjsu.net/v1/requests?User_Id='+user+"&Type=issue"
+       axios
+        .get(
+          url
+        )
+        .then(res => {
+          // alert('getting data',res);
+          this.setState({ loading: false });
+          this.setState({ requests: res.data });
+        }
+        ).catch(console.log);
+    }
+  });
+};
 
   render() {
     //this.loadReqs();

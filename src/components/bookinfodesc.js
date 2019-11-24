@@ -26,7 +26,7 @@ import Paper from '@material-ui/core/Paper';
     console.log('func called',id,title2,this.state.isLoggedIn)
     if (this.state.isLoggedIn ){
     var domain='http://lmp.nupursjsu.net/v1/'
-    var user=firebase.auth().currentUser.email;
+    var user=firebase.auth().currentUser.uid;
     var url ="/request/"+user+"/"+id;
     // var type="Type"
     // console.log(user)
@@ -37,7 +37,7 @@ import Paper from '@material-ui/core/Paper';
 			  url=domain+"requests"+userInfo;
 			  axios.get(url)
 			  .then(data => {
-					console.log('data',data.data.length)
+					// console.log('data',data.data.length)
 			var alreadyTaken=0
 					if(data.data.length>0){
 					alreadyTaken=1;

@@ -46,10 +46,11 @@ class index extends Component {
   //     }
   componentDidMount() {
     var isAdmin = localStorage.getItem("isAdmin");
-    console.log("admin via local", isAdmin);
+	// console.log("admin via local", isAdmin);
+	var domain='http://lmp.nupursjsu.net/v1/'
     axios
       .get(
-        `http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books?title=Death`
+        domain+'books?title=Death'
       )
       .then(data => {
         // console.log(firebase.auth().currentUser.displayName);
