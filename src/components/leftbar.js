@@ -8,7 +8,7 @@ import {Component} from 'react';
 class LeftBar  extends Component {
   render(){
     var isAdmin=localStorage.getItem("isAdmin")
-    // alert(isAdim)
+    alert(isAdmin)
     var request=''
     var ret=''
     if (isAdmin){
