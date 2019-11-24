@@ -11,9 +11,13 @@ class LeftBar  extends Component {
     alert(isAdmin)
     var request=''
     var ret=''
-    if (isAdmin){
+    if (isAdmin==1){
        request= <Nav.Link href="/Requests">Requests</Nav.Link>
        ret=<Nav.Link href="/Returns">Returns</Nav.Link>
+    }
+    else{
+alert('not an admin')
+
     }
     
 
