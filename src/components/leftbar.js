@@ -8,7 +8,6 @@ import {Component} from 'react';
 class LeftBar  extends Component {
   render(){
     var isAdmin=localStorage.getItem("isAdmin")
-    alert(isAdmin)
     var adminlog=parseInt(isAdmin)
     var request=''
     var ret=''
@@ -17,7 +16,7 @@ class LeftBar  extends Component {
        ret=<Nav.Link href="/Returns">Returns</Nav.Link>
     }
     else{
-alert('not an admin')
+
 
     }
     

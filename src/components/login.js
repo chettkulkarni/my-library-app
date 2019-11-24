@@ -101,7 +101,7 @@ class Login extends Component {
         var action;
 
         if(this.state.isSignedIn) {
-            console.log(firebase.auth().currentUser.displayName);
+            // console.log(firebase.auth().currentUser.displayName);
             this.props.history.goBack();
         } else {
             action =    <StyledFirebaseAuth 
