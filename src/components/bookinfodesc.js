@@ -25,6 +25,7 @@ import Paper from '@material-ui/core/Paper';
   handleClick(e,id,title2) {
     console.log('func called',id,title2,this.state.isLoggedIn)
     if (this.state.isLoggedIn ){
+    var domain='http://lmp.nupursjsu.net/v1/'
     var user=firebase.auth().currentUser.email;
     var url ="/request/"+user+"/"+id;
     // var type="Type"
@@ -33,7 +34,7 @@ import Paper from '@material-ui/core/Paper';
     //  user=1
 			var userInfo ='?Status=Approved,Issued&Book_Id='+id+'&User_Id='+user;
 			console.log(userInfo)
-			  url="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests"+userInfo;
+			  url=domain+"requests"+userInfo;
 			  axios.get(url)
 			  .then(data => {
 					console.log('data',data.data.length)
@@ -53,7 +54,7 @@ import Paper from '@material-ui/core/Paper';
               'title': title2,
               'userId':user
             };
-        axios.post(`http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests`, userInfo)
+        axios.post(domain+'requests', userInfo)
         .then(res => {
           console.log(res);
           console.log(res.data);

@@ -43,10 +43,12 @@ class BookInfo extends Component {
 		firebase.auth().onAuthStateChanged(user=>{
 			this.setState({isLoggedIn : !!user });   
 		});
+		var domain='http://lmp.nupursjsu.net/v1/'
 
 
 	 var bookId = window.location.pathname.split("/")[2]
-	  let url = 'http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books/' + bookId;
+
+	  let url = domain+'books/' + bookId;
 	      fetch(url)
 	      .then(res => res.json())
 	      .then(data => {
@@ -55,22 +57,32 @@ class BookInfo extends Component {
 	        a.push(data)	      
 	    //   console.log(a)
 		  this.setState({ books: a })
+		  
 
-			var user=firebase.auth().currentUser.email;
-			var userInfo ='?Status=Approved,Issued&Book_Id='+bookId+'&User_Id='+user
-			  console.log(userInfo)
-			  var url="http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests"+userInfo;
-			  axios.get(url)
-			  .then(data => {
-					console.log('data',data.data.length)
-					var alreadyTaken=0
-					if(data.data.length>0){
-					alreadyTaken=1;
-				}
+
 			
 
 			var button2=''
+			
 			if(this.state.isLoggedIn){
+				var alreadyTaken=0
+				var user=firebase.auth().currentUser.email;
+				var userInfo ='?Status=Approved,Issued&Book_Id='+bookId+'&User_Id='+user
+				// console.log(userInfo)
+				var url=domain+"requests"+userInfo;
+				// alert(url)
+		
+				 axios.get(url)
+				.then(data => {
+				// alert('data',data.data.length)
+				
+				if(data.data.length>0){
+				alreadyTaken=1;
+				}
+			
+
+
+				
 			if(alreadyTaken){
                 button2=<p>only one book person sorry</p>
 				}
@@ -78,9 +90,9 @@ class BookInfo extends Component {
 			// console.log('checking',this.state.books[0].bookID,this.state.books[0].count)
 			else if (this.state.books[0].count>0){
 					button2=<p>Request book</p>
-					    }
+					    }
 			this.setState({button:button2})
-
+					})
 			// console.log('button',this.state.button,button2,alreadyTaken)
 				}
 				else{
@@ -88,7 +100,7 @@ class BookInfo extends Component {
 					this.setState({button:button2})
 				}
 				
-				url='http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books/'+bookId+'/recommendations'
+				url=domain+'books/'+bookId+'/recommendations'
 				console.log(url)
 					axios.get(url)
 				.then(data => {
@@ -109,7 +121,6 @@ class BookInfo extends Component {
 
 		// console.log(this.state.button,this.state.books,alreadyTaken)
 		  }).catch(console.log)
-		}).catch(console.log)
 	
 	// url='http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books/'+bookId+'/recommendations'
 	// console.log(url)
@@ -134,3 +145,4 @@ class BookInfo extends Component {
 }
 }
   export default BookInfo;
+

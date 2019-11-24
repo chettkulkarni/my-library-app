@@ -52,8 +52,10 @@ class Login extends Component {
                 var email=snapshot.val().email;
                 var isAdmin=snapshot.val().isAdmin;
                 localStorage.setItem("isAdmin", isAdmin);
+                localStorage.setItem("uid", uid);
                 
                 console.log('x',username,email,isAdmin)
+                
                 // ...
               });
             // console.log('x')
