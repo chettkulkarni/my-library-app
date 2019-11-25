@@ -17,10 +17,10 @@
         path: /opt/esp/my-library-app/build
         state: absent
 
-    - name: Copy app server content
+    - name: Copy UI content
       become: yes
       copy:
-        src: build
+        src: /Users/rahuly/pythonWork/my-library-app/build
         dest: /opt/esp/my-library-app
 
     - name: Getting running python server process id
