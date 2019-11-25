@@ -32,6 +32,15 @@
       shell: "kill {{ item }}"
       with_items: "{{ items.stdout_lines }}"
 
+    - name: Getting running gunicorn server process id
+      shell: ps aux | grep [g]unicorn | awk '{ print $2 }'
+      register: gunicornItems
+
+    - name: Stopping the gunicorn process
+      become: yes
+      shell: "kill {{ gunicornItems }}"
+      with_items: "{{ gunicornItems.stdout_lines }}"
+
     - name: Start webserver after changing directory
       become: yes
       shell: nohup python apis.py </dev/null >server.log 2>&1 &
