@@ -39,6 +39,7 @@ class Requests extends Component {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isLoggedIn: !!user });
     });
+    
   };
 
   componentDidMount() {
@@ -69,6 +70,15 @@ class Requests extends Component {
 
   render() {
     const { loading, requests } = this.state;
+    var isAdmin=localStorage.getItem("isAdmin")
+    var adminlog=parseInt(isAdmin)
+    if(adminlog==0){
+      return(
+        <Container>
+        <h1>you are not authorised to use this webpage   </h1>
+      </Container>
+      );
+    }
 
     if (loading) {
       return (

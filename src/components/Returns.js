@@ -68,6 +68,15 @@ class Returns extends Component {
 
   render() {
     //this.loadReqs();
+    var isAdmin=localStorage.getItem("isAdmin")
+    var adminlog=parseInt(isAdmin)
+    if(adminlog==0){
+      return(
+        <Container>
+        <h1>you are not authorised to use this webpage   </h1>
+      </Container>
+      );
+    }
     const { loading, returns } = this.state;
     if (loading) {
       return (
