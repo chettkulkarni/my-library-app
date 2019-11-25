@@ -56,8 +56,8 @@ import Paper from '@material-ui/core/Paper';
             };
         axios.post(domain+'requests', userInfo)
         .then(res => {
-          console.log(res);
-          console.log(res.data);
+          // console.log(res);
+          // console.log(res.data);
           window.location.reload(false);
         })
         
