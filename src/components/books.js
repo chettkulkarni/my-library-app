@@ -14,7 +14,7 @@ class Books extends Component {
   render() {
     //  console.log(this.props.books2)
     return (
-      <div>
+      <div class='col-9'>
         <center>
           <h1>Book List</h1>
         </center>
@@ -25,7 +25,7 @@ class Books extends Component {
                 <CardDeck>
                   <Card style={{ width: "20rem" }}>
                     <CardBody>
-                      <CardTitle>{book.title}</CardTitle>
+                      <CardTitle><b>{book.title}</b></CardTitle>
                       <CardText>
                         {/* <p><b>Author:</b>{book.authors}</p> */}
                         <b>Author: </b>{" "}
@@ -39,12 +39,12 @@ class Books extends Component {
                           <b>Rating:</b>
                           {book.average_rating}
                         </p>
-                        <p>
-                          <b>BookID:</b>
+                        {/* <p> */}
+                          {/* <b>BookID:</b>
                           {book.bookID}
-                        </p>
+                        </p> */}
                         <p>
-                          <img src={book.image}></img>
+                          <img height="300" width="200" src={book.image}></img>
                         </p>
                         <p>
                           <b>Year Published:</b>

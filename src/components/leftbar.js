@@ -22,15 +22,14 @@ class LeftBar  extends Component {
     
 
   return (
-    <div>
+    <div class='col-2'>
       <Navbar
         collapseOnSelect
         expand="lg"
         bg="dark"
         variant="dark"
-        className="flex-column"
       >
-        <Nav className="mr-auto" style={{ minHeight: 100 + "vh" }}>
+        <Nav className="col-2" style={{ minHeight: 100 + "vh" }}>
           <li>
             {request}
             {ret}

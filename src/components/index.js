@@ -13,8 +13,8 @@ class index extends Component {
       <div>
         <PrimarySearchAppBar />
         <Row>
-          <Leftbar />
-          <Books books={this.state.books} />
+          <Leftbar class='col-9'/>
+          <Books  books={this.state.books} />
         </Row>
       </div>
     );
