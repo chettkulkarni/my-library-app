@@ -12,9 +12,9 @@ class index extends Component {
     return (
       <div>
         <PrimarySearchAppBar />
-        <Row>
-          <Leftbar class='col-9'/>
-          <Books  books={this.state.books} />
+        <Row className='row'>
+          <Leftbar className='col-md-3' />
+          <Books  books={this.state.books} className='col-md-9'/>
         </Row>
       </div>
     );

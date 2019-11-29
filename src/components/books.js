@@ -14,7 +14,7 @@ class Books extends Component {
   render() {
     //  console.log(this.props.books2)
     return (
-      <div class='col-9'>
+      <div >
         <center>
           <h1>Book List</h1>
         </center>
@@ -23,7 +23,7 @@ class Books extends Component {
             {this.props.books.map((book, index) => (
               <Col md="auto">
                 <CardDeck>
-                  <Card style={{ width: "20rem" }}>
+                  <Card>
                     <CardBody>
                       <CardTitle><b>{book.title}</b></CardTitle>
                       <CardText>

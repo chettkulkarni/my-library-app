@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {Component} from 'react';
+import '../css/bookinfodesc.css';
 
 
 
@@ -22,14 +23,14 @@ class LeftBar  extends Component {
     
 
   return (
-    <div class='col-2'>
+    <div >
       <Navbar
         collapseOnSelect
         expand="lg"
         bg="dark"
         variant="dark"
       >
-        <Nav className="col-2" style={{ minHeight: 100 + "vh" }}>
+        <Nav style={{ minHeight: 100 + "vh" }}>
           <li>
             {request}
             {ret}
