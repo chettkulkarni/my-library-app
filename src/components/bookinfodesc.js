@@ -9,6 +9,9 @@ import axios from "axios";
 import "../css/bookinfodesc.css";
 // import Jumbotron from 'react-bootstrap/Jumbotron'
 import Paper from "@material-ui/core/Paper";
+import {Row,Col} from 'react-bootstrap/';
+import Tweets from './Tweets';
+import Googlebooks from './Googlebooks'
 
 class BookInfoDesc extends Component {
   //  constructor(props){
@@ -75,6 +78,8 @@ class BookInfoDesc extends Component {
           {this.props.books.map((book, index) => (
             <div>
               <Paper>
+                <Row>
+                  <Col className='col-md-4'>
                 <h1>{book.title}</h1>
                 <b>Author: </b>{" "}
                 <Link to={`/search/?title=&authors=${book.authors}&language=`}>
@@ -118,6 +123,15 @@ class BookInfoDesc extends Component {
                   {this.props.button}
                 </Button>
                 {/* <p>{this.state.toggleState}</p>   */}
+                </Col>
+                <Col className='col-md-4'>
+                <Tweets string={book.title} />
+                  {/* <GoodReadSearch searchText={book.title}/> */}
+                  </Col>
+                <Col className='col-md-4'>
+                  <Googlebooks googlebooktitle={book.title} />
+                  </Col>
+                </Row>
               </Paper>
             </div>
           ))}
