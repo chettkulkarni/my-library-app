@@ -19,7 +19,7 @@ class Googlebooks extends Component{
     componentWillMount() {
         const bookTitle=this.props.googlebooktitle
         console.log(bookTitle)
-        let url = 'http://0.0.0.0:80/v1/googlebooks/'+bookTitle
+        let url = 'http://ec2-3-81-10-15.compute-1.amazonaws.com:80/v1/googlebooks/'+bookTitle
         console.log("Google URL",url)
         axios.get(url)
             .then(res => {
