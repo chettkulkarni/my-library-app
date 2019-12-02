@@ -49,7 +49,7 @@ class BookInfo extends Component {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isLoggedIn: !!user });
     });
-    var domain = "http://lmp.nupursjsu.net/v1/";
+    var domain = "https://lmp.nupursjsu.net/v1/";
 
     var bookId = window.location.pathname.split("/")[2];
 
@@ -122,7 +122,7 @@ class BookInfo extends Component {
       })
       .catch(console.log);
 
-    // url='http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books/'+bookId+'/recommendations'
+    // url='https://lmp.nupursjsu.net/v1/books/'+bookId+'/recommendations'
     // console.log(url)
     // 	axios.get(url)
     // .then(data => {

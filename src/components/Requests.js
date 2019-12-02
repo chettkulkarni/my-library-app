@@ -28,7 +28,7 @@ class Requests extends Component {
   loadReqs() {
     axios
       .get(
-        "http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests?Status=Approved&Type=issue"
+        "https://lmp.nupursjsu.net/v1/requests?Status=Approved&Type=issue"
       )
       .then(res => {
         console.log(res);
@@ -55,7 +55,7 @@ class Requests extends Component {
       let self = this;
       axios
         .patch(
-          "http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests/" +
+          "https://lmp.nupursjsu.net/v1/requests/" +
             event.target.value,
           a
         )

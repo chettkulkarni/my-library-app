@@ -24,7 +24,7 @@ class index extends Component {
     books: []
   };
   componentDidMount() {
-	var domain='http://lmp.nupursjsu.net/v1/'
+	var domain='https://lmp.nupursjsu.net/v1/'
     axios
       .get(
         domain+'books?title=Death'
@@ -42,7 +42,7 @@ class index extends Component {
 
 		var isAdmin = localStorage.getItem("isAdmin");
 		console.log('admin via local',isAdmin)
-		var domain='http://lmp.nupursjsu.net/v1/'
+		var domain='https://lmp.nupursjsu.net/v1/'
 		axios.get(domain+'books?title=Death')
 	.then(data => {
 		const a=[]

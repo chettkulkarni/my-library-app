@@ -27,7 +27,7 @@ class Returns extends Component {
   loadReqs() {
     axios
       .get(
-        "http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests?Status=Issued&Type=issue"
+        "https://lmp.nupursjsu.net/v1/requests?Status=Issued&Type=issue"
       )
       .then(res => {
         console.log(res);
@@ -53,7 +53,7 @@ class Returns extends Component {
       let self = this;
       axios
         .patch(
-          "http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/requests/" +
+          "https://lmp.nupursjsu.net/v1/requests/" +
             event.target.value,
           a
         )

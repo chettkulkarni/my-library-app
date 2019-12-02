@@ -22,7 +22,7 @@ class MyBooks extends Component {
       this.setState({isLoggedIn : !!user });   
     if(this.state.isLoggedIn){
       var user=firebase.auth().currentUser.uid
-      var url='http://lmp.nupursjsu.net/v1/requests?User_Id='+user+"&Type=issue"
+      var url='https://lmp.nupursjsu.net/v1/requests?User_Id='+user+"&Type=issue"
        axios
         .get(
           url

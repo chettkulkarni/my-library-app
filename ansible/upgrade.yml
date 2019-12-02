@@ -46,3 +46,13 @@
       shell: nohup python apis.py </dev/null >server.log 2>&1 &
       args:
         chdir: /opt/esp/LMP
+
+    - name: Removing Nginx cache files to freshen up the UI content
+      become: yes
+      file:
+        path: /opt/nginx_cache
+        state: absent
+
+    - name: Reload nginx configuration
+      become: yes
+      shell: nginx -s reload

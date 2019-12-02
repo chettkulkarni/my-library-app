@@ -37,7 +37,7 @@ class search extends Component {
 		console.log('bookid',bookId)
 		
 		
-		var url2='http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books'+bookId;
+		var url2='https://lmp.nupursjsu.net/v1/books'+bookId;
 		
 		
 	  let url = url2;
@@ -71,8 +71,4 @@ class search extends Component {
   
   
   }
-  //http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books
-  //http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books
-  //http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books/authors?=J.K.%20Rowling-Mary%20GrandPr%C3%A9
-  //Export the App component so that it can be used in index.js
   export default search;

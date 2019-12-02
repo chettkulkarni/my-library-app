@@ -27,7 +27,7 @@ class BookInfoDesc extends Component {
   handleClick(e, id, title2) {
     console.log("func called", id, title2, this.state.isLoggedIn);
     if (this.state.isLoggedIn) {
-      var domain = "http://lmp.nupursjsu.net/v1/";
+      var domain = "https://lmp.nupursjsu.net/v1/";
       var user = firebase.auth().currentUser.uid;
       var url = "/request/" + user + "/" + id;
       // var type="Type"
