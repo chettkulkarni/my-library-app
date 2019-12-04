@@ -100,7 +100,7 @@ class BookInfo extends Component {
         // url=domain+'books/'+bookId+'/recommendations'
         // link to instance containing machine learning code
         url =
-          "http://18.218.64.73:81/v1/" + "books/" + bookId + "/recommendations";
+          "https://lmp.nupursjsu.net/v1/" + "books/" + bookId + "/recommendations";
         // console.log(url)
         axios
           .get(url)
