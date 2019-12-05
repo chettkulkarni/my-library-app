@@ -19,7 +19,7 @@ class Tweets extends Component {
     componentWillMount() {
         const bookTitle=this.props.string
         console.log(bookTitle)
-        let url = 'http://ec2-3-81-10-15.compute-1.amazonaws.com:80/v1/tweets/'+bookTitle
+        let url = 'https://lmp.nupursjsu.net/v1/tweets/'+bookTitle
         console.log(url)
         axios.get(url)
             .then(res => {
