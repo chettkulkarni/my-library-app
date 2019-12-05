@@ -46,6 +46,9 @@ class BookInfo extends Component {
   };
 
   componentDidMount() {
+    const idtoken = {
+      'Authorization' :localStorage.getItem("idToken")
+    }
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isLoggedIn: !!user });
     });
@@ -54,7 +57,10 @@ class BookInfo extends Component {
     var bookId = window.location.pathname.split("/")[2];
 
     let url = domain + "books/" + bookId;
-    fetch(url)
+    fetch(url,
+      {
+        headers: idtoken
+      })
       .then(res => res.json())
       .then(data => {
         // console.log(data)
@@ -74,7 +80,10 @@ class BookInfo extends Component {
           var url = domain + "requests" + userInfo;
           // alert(url)
 
-          axios.get(url).then(data => {
+          axios.get(url,
+            {
+              headers: idtoken
+            }).then(data => {
             // alert('data',data.data.length)
 
             if (data.data.length > 0) {
@@ -103,7 +112,10 @@ class BookInfo extends Component {
           "https://lmp.nupursjsu.net/v1/" + "books/" + bookId + "/recommendations";
         // console.log(url)
         axios
-          .get(url)
+          .get(url,
+            {
+              headers: idtoken
+            })
           .then(data => {
             // console.log(firebase.auth().currentUser.displayName);
             console.log("here", data);

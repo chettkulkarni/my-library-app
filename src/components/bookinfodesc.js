@@ -26,18 +26,26 @@ class BookInfoDesc extends Component {
 
   handleClick(e, id, title2) {
     console.log("func called", id, title2, this.state.isLoggedIn);
+    const idtoken = {
+      'Authorization' :localStorage.getItem("idToken")
+    }
     if (this.state.isLoggedIn) {
+
       var domain = "https://lmp.nupursjsu.net/v1/";
       var user = firebase.auth().currentUser.uid;
       var url = "/request/" + user + "/" + id;
       // var type="Type"
       // console.log(user)
+      
 
       //  user=1
       var userInfo ="?Status=Approved,Issued&Book_Id=" + id + "&User_Id=" + user;
       console.log(userInfo);
       url = domain + "requests" + userInfo;
-      axios.get(url).then(data => {
+      axios.get(url,
+        {
+          headers: idtoken
+        }).then(data => {
         // console.log('data',data.data.length)
         var alreadyTaken = 0;
         if (data.data.length > 0) {
@@ -53,9 +61,7 @@ class BookInfoDesc extends Component {
             title: title2,
             userId: user
           };
-          const idtoken = {
-            'Authorization' : 'idtoken' + localStorage.getItem("idToken")
-          }
+
           axios.post(domain + "requests", userInfo,
           {
             headers: idtoken
