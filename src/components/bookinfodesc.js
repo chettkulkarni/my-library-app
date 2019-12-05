@@ -53,11 +53,12 @@ class BookInfoDesc extends Component {
             title: title2,
             userId: user
           };
-          const headers = {
-            'idtoken':localStorage.getItem("idToken"),
+          const idtoken = {
+            'Authorization' : 'idtoken' + localStorage.getItem("idToken")
           }
-          axios.post(domain + "requests", userInfo,{
-            headers: headers
+          axios.post(domain + "requests", userInfo,
+          {
+            headers: idtoken
           }).then(res => {
             console.log(res);
             console.log(res.data);
