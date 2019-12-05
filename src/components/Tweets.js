@@ -16,24 +16,27 @@ class Tweets extends Component {
     state = {
         displaytweet: []
     }
-    componentWillMount() {
-        const bookTitle=this.props.string
-        console.log(bookTitle)
+    componentDidMount() {
+        // alert('inside tweet')
+        var bookTitle=this.props.string
+        // bookTitle = bookTitle.replace(/[^\w\s]/gi, "")
         let url = 'https://lmp.nupursjsu.net/v1/tweets/'+bookTitle
-        console.log(url)
-        axios.get(url)
+        // alert(url)
+        axios.post(url)
             .then(res => {
-                console.log("Book tweets", res);
+                // console.log("Book tweets", res);
                 
                 const a = []
             
                 for (var i=0;i<5;i++){
-                    a.push(res.data.statuses[i].text)
+                    a.push(res.data[i])
+                    // alert('tweets fetched',res.data[i])
                 }
-                console.log(a)
+                // console.log(a)
                 this.setState({ displaytweet : a})
-                console.log(a,this.state.displaytweet)
+                // console.log(a,this.state.displaytweet)
             }).catch(console.log);
+
 
     }
 }
