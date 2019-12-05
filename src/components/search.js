@@ -11,6 +11,7 @@ import { Row, Col ,Pagination} from 'react-bootstrap';
 
 
 class search extends Component {
+	// alert({bookId})
 	changePage = (e) => {
 		let page = this.state.activePage;
 		if (e.target.text === ">" && page !== parseInt(e.target.name)) {
@@ -98,7 +99,7 @@ class search extends Component {
 		console.log('bookid', bookId)
 
 
-		var url2 = 'http://ec2-52-53-153-16.us-west-1.compute.amazonaws.com/v1/books' + bookId;
+		var url2='https://lmp.nupursjsu.net/v1/books'+bookId;
 
 
 		let url = url2;
