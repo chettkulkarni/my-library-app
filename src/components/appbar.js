@@ -44,7 +44,7 @@ render(){
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start"  color="inherit" aria-label="menu">
-            <MenuIcon />
+            {/* <MenuIcon /> */}
           </IconButton>
          
           <Link style={{ color: '#FFF' }} to={`/`} > <Typography variant="h6"  >Library Management Platform</Typography></Link>
