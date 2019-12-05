@@ -47,6 +47,7 @@ class Login extends Component {
             // console.log('retval',retVal)
             currentProp.setState({alreadyExist: retVal})
             var uid=firebase.auth().currentUser.uid;
+            var idToken=firebase.auth().currentUser.getIdToken
             var x=firebase.database().ref('users').child(uid).once('value').then(function(snapshot) {
                 var username =snapshot.val().username;
                 var email=snapshot.val().email;
@@ -54,9 +55,12 @@ class Login extends Component {
                 // alert('isadmin info',isAdmin)
                 localStorage.setItem("isAdmin", isAdmin);
                 localStorage.setItem("uid", uid);
+                localStorage.setItem("idToken", idToken);
+                
                 
                 // ...
               });
+
             // console.log('x')
 
             if (!retVal){
@@ -64,7 +68,10 @@ class Login extends Component {
                             }
             });
 
-        }      
+        }     
+        
+        
+        
         });
 
         // var database = firebase.database();

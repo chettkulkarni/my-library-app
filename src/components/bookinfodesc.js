@@ -34,8 +34,7 @@ class BookInfoDesc extends Component {
       // console.log(user)
 
       //  user=1
-      var userInfo =
-        "?Status=Approved,Issued&Book_Id=" + id + "&User_Id=" + user;
+      var userInfo ="?Status=Approved,Issued&Book_Id=" + id + "&User_Id=" + user;
       console.log(userInfo);
       url = domain + "requests" + userInfo;
       axios.get(url).then(data => {
@@ -54,7 +53,12 @@ class BookInfoDesc extends Component {
             title: title2,
             userId: user
           };
-          axios.post(domain + "requests", userInfo).then(res => {
+          const headers = {
+            'idtoken':localStorage.getItem("idToken"),
+          }
+          axios.post(domain + "requests", userInfo,{
+            headers: headers
+          }).then(res => {
             console.log(res);
             console.log(res.data);
             window.location.reload(false);

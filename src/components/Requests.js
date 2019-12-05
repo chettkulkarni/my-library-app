@@ -37,14 +37,17 @@ class Requests extends Component {
       });
   }
   componentWillMount = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      this.setState({ isLoggedIn: !!user });
-    });
-    
+
+
   };
 
   componentDidMount() {
+    firebase.auth().onAuthStateChanged (user => {
+      this.setState({ isLoggedIn: !!user });
+    });
     this.loadReqs();
+    
+    
   }
 
   handleClick(event) {
