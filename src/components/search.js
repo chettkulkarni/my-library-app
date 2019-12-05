@@ -96,6 +96,8 @@ class search extends Component {
 
 	componentDidMount() {
 		var bookId = window.location.search
+		bookId = bookId.replace(/[^\w\s]/gi, "")
+		//alert(stripped);
 		console.log('bookid', bookId)
 
 
