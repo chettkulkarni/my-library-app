@@ -56,7 +56,7 @@ class Login extends Component {
                 // alert('isadmin info',isAdmin)
                 localStorage.setItem("isAdmin", isAdmin);
                 localStorage.setItem("uid", uid);
-                localStorage.setItem("idToken", idToken.i);
+                localStorage.setItem("idToken", idToken);
                 
                 
                 // ...
