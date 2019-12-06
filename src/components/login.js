@@ -50,8 +50,8 @@ class Login extends Component {
             var idToken=firebase.auth().currentUser.getIdToken()
             console.log(idToken)
             var x=firebase.database().ref('users').child(uid).once('value').then(function(snapshot) {
-                var username =snapshot.val().username;
-                var email=snapshot.val().email;
+                // var username =snapshot.val().username;
+                // var email=snapshot.val().email;
                 var isAdmin=snapshot.val().isAdmin;
                 // alert('isadmin info',isAdmin)
                 localStorage.setItem("isAdmin", isAdmin);

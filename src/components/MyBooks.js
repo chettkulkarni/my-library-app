@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../App.css";
-import Navbarhome from "./navbar";
+// import Navbarhome from "./navbar";
 import Leftbar from "./leftbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
@@ -21,7 +21,7 @@ class MyBooks extends Component {
 		firebase.auth().onAuthStateChanged(user=>{
       this.setState({isLoggedIn : !!user });   
     if(this.state.isLoggedIn){
-      var user=firebase.auth().currentUser.uid
+       user=firebase.auth().currentUser.uid
       var url='https://lmp.nupursjsu.net/v1/requests?User_Id='+user+"&Type=issue"
        axios
         .get(

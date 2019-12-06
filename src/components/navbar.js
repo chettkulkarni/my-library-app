@@ -9,7 +9,7 @@ export default class Navbar_home extends Component{
   state={isLoggedIn : false}
   componentWillMount = () =>{
 
-    var database = firebase.database();
+    // var database = firebase.database();
     function writeUserData(userId, name, email, imageUrl) {
       firebase.database().ref('users/' + userId).set({
         username: name,

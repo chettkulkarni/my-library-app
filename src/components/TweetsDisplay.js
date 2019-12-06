@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import {Card } from 'react-bootstrap';
 
 class TweetsDisplay extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-    }
+    // }
     render() {
         var right = 200 + 'px';
         return (

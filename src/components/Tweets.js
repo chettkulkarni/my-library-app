@@ -3,9 +3,9 @@ import axios from 'axios';
 import TweetsDisplay from './TweetsDisplay'
 
 class Tweets extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     render() {
         return (
             <div>

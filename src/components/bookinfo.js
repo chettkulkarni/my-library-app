@@ -40,7 +40,7 @@ class BookInfo extends Component {
   }
   state = {
     books: [],
-    button: "",
+    button: '',
     isLoggedIn: false,
     recommendations: []
   };
@@ -109,7 +109,7 @@ class BookInfo extends Component {
         // url=domain+'books/'+bookId+'/recommendations'
         // link to instance containing machine learning code
         url =
-          "https://lmp.nupursjsu.net/v1/" + "books/" + bookId + "/recommendations";
+          "https://lmp.nupursjsu.net/v1/books/" + bookId + "/recommendations";
         // console.log(url)
         axios
           .get(url,

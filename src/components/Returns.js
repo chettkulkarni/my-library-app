@@ -71,7 +71,7 @@ class Returns extends Component {
     //this.loadReqs();
     var isAdmin = localStorage.getItem("isAdmin");
     var adminlog = parseInt(isAdmin);
-    if (adminlog == 0) {
+    if (adminlog === 0) {
       return (
         <Container>
           <h1>you are not authorised to use this webpage </h1>

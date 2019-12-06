@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {Component} from 'react';
 import '../css/bookinfodesc.css';
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 
 
