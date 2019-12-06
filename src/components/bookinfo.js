@@ -45,13 +45,14 @@ class BookInfo extends Component {
     recommendations: []
   };
 
+  
   componentDidMount() {
     const idtoken = {
       'Authorization' :localStorage.getItem("idToken")
     }
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isLoggedIn: !!user });
-    });
+    
     var domain = "https://lmp.nupursjsu.net/v1/";
 
     var bookId = window.location.pathname.split("/")[2];
@@ -70,7 +71,7 @@ class BookInfo extends Component {
         this.setState({ books: a });
 
         var button2 = "";
-
+        console.log('isLoggedIn',this.state.isLoggedIn)
         if (this.state.isLoggedIn) {
           var alreadyTaken = 0;
           var user = firebase.auth().currentUser.uid;
@@ -80,10 +81,7 @@ class BookInfo extends Component {
           var url = domain + "requests" + userInfo;
           // alert(url)
 
-          axios.get(url,
-            {
-              headers: idtoken
-            }).then(data => {
+          axios.get(url).then(data => {
             // alert('data',data.data.length)
 
             if (data.data.length > 0) {
@@ -101,7 +99,8 @@ class BookInfo extends Component {
             this.setState({ button: button2 });
           });
           // console.log('button',this.state.button,button2,alreadyTaken)
-        } else {
+        } 
+        else {
           button2 = <Link to="/login">Login to continue</Link>;
           this.setState({ button: button2 });
         }
@@ -133,6 +132,7 @@ class BookInfo extends Component {
         // console.log(this.state.button,this.state.books,alreadyTaken)
       })
       .catch(console.log);
+    });
 
     // url='https://lmp.nupursjsu.net/v1/books/'+bookId+'/recommendations'
     // console.log(url)

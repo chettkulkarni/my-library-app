@@ -25,7 +25,7 @@ class BookInfoDesc extends Component {
   };
 
   handleClick(e, id, title2) {
-    console.log("func called", id, title2, this.state.isLoggedIn);
+    // console.log("func called", id, title2, this.state.isLoggedIn);
     const idtoken = {
       'Authorization' :localStorage.getItem("idToken")
     }
@@ -42,10 +42,7 @@ class BookInfoDesc extends Component {
       var userInfo ="?Status=Approved,Issued&Book_Id=" + id + "&User_Id=" + user;
       console.log(userInfo);
       url = domain + "requests" + userInfo;
-      axios.get(url,
-        {
-          headers: idtoken
-        }).then(data => {
+      axios.get(url).then(data => {
         // console.log('data',data.data.length)
         var alreadyTaken = 0;
         if (data.data.length > 0) {
@@ -62,13 +59,10 @@ class BookInfoDesc extends Component {
             userId: user
           };
 
-          axios.post(domain + "requests", userInfo,
-          {
-            headers: idtoken
-          }).then(res => {
+          axios.post(domain + "requests", userInfo).then(res => {
             console.log(res);
             console.log(res.data);
-            window.location.reload(false);
+            window.location.reload(true);
           });
         }
       });
