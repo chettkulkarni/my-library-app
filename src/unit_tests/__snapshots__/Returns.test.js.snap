@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot for Returns 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="loading"
+    />
+  </div>
+</div>
+`;
