@@ -51,7 +51,7 @@ render(){
           
             <Button  href="/search?title=xxyyzz&authors=zzzyymm&language=abbcc" variant="outlined" style={{ color: '#FFF' }}>Search</Button>
            <Button variant="outlined" style={{ color: '#FFF' }}>{action}</Button>  
-           <Button>Jenkins deploy Test</Button>
+           {/* <Button>Jenkins deploy Test</Button> */}
         </Toolbar>
       </AppBar>
     </div>
