@@ -59,7 +59,6 @@ export default class ButtonAppBar extends Component {
             <Button variant="outlined" style={{ color: "#FFF" }}>
               {action}
             </Button>
-            <Button>Jenkins deploy Test</Button>
           </Toolbar>
         </AppBar>
       </div>
